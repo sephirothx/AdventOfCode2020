@@ -1,5 +1,4 @@
-inp = list(map(int, open('input.txt').read().splitlines()))
-inp.sort()
+inp = sorted(map(int, open('input.txt').readlines()))
 
 for idx, i in enumerate(inp):
     lo = idx + 1
