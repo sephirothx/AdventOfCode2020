@@ -1,18 +1,11 @@
+import re
+
 inp = open('input.txt').read().splitlines()
 
 def seat(bp):
-    rl, rh = 0, 127
-    cl, ch = 0, 7
-    for c in bp:
-        if c=='F':
-            rh=(rh+rl)//2
-        if c=='B':
-            rl=(rh+rl+1)//2
-        if c=='R':
-            cl=(ch+cl+1)//2
-        if c=='L':
-            ch=(ch+cl)//2
-    return rl*8+cl
+    bp = re.sub(r'[FL]', '0', bp)
+    bp = re.sub(r'[BR]', '1', bp)
+    return int(bp,2)
 
 z = set()
 for l in inp:
