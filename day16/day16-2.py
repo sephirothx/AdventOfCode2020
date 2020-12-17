@@ -19,8 +19,7 @@ def possibilities(ticket):
         s = [0]*len(ticket)
         for i, r in enumerate(rules):
             l0,h0,l1,h1 = r
-            if l0 <= t <= h0 or l1 <= t <= h1:
-                s[i] = 1
+            s[i] = l0 <= t <= h0 or l1 <= t <= h1
         ret.append(s)
     return ret
 
