@@ -14,9 +14,5 @@ while i not in [key, door]:
     ls += 1
     i *= 7
     i %= 20201227
-    if i == key:
-        print(ls)
-        print(trans(door,ls))
-    if i == door:
-        print(ls)
-        print(trans(key,ls))
+    if i in (key, door):
+        print(trans(door if i==key else key, ls))
